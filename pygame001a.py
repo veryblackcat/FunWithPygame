@@ -19,6 +19,7 @@ player_color = (20, 200, 20)          # (R, G, B) Kolor prostokąta (gracza)
 player_step = 5
 
 txt_pos_x, txt_pos_y = 100, 300       # Położenie tekstu
+font = pygame.font.SysFont("Calibri", 48)
 
 run = True
 
@@ -48,7 +49,7 @@ while run:
 
     # Napisy - współrzędne gracza - przygotowanie tekstu jako grafiki
     playerXY_txt = f"x = {player_pos_x}, y = {player_pos_y}"
-    playerXY_txt2image = pygame.font.Font.render(pygame.font.SysFont("Calibri", 48), playerXY_txt, True, (0, 0, 0))
+    playerXY_txt2image = font.render(playerXY_txt, True, (0, 0, 0))
 
     player.update(player_pos_x, player_pos_y, player_width, player_height)
     

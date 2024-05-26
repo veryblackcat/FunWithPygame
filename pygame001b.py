@@ -55,7 +55,7 @@ while run:
 
     # Napisy - współrzędne gracza - przygotowanie tekstu jako grafiki
     playerXY_txt = f"x = {player.left}, y = {player.top}"
-    playerXY_txt2image = pygame.font.Font.render(font, playerXY_txt, True, (0, 0, 0))
+    playerXY_txt2image = font.render(playerXY_txt, True, (0, 0, 0))
         
     # Przygotowanie do wyświetlenia
     window.fill(window_background)                           # wypełnienie okna kolorem zdefiniowanym w zmiennej window_background

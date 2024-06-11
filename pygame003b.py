@@ -4,8 +4,8 @@ Symulacja ruchu i odbić piłeczki jak w starej grze wideo.
 Kąt odbicia piłeczki zmienia się po odbiciu od rakiety gracza.
 Obliczanie położenia piłeczki z funkcji liniowej y = ax + b
 Wyliczenie b dla znanych wartości a, x, y po przekształceniu
-wzoru funkcji liniowej b = -ax + y jest konieczne w przy każdym
-odbiciu piłeczki.
+wzoru funkcji liniowej otrzymujemy b = -ax + y jest to konieczne 
+przy każdym odbiciu piłeczki.
 '''
 import pygame
 import random
@@ -98,6 +98,7 @@ while run:
         ball_step *= -1
         ball_direction *= -1
         ball_b_factor = -ball_direction * ball.centerx + ball.bottom
+
     if ball.top < 0:
         ball.top = 0
         ball_direction *= -1
@@ -119,17 +120,16 @@ while run:
     '''
     if ball.bottom > player.top:
         ball.bottom = player.top
-        if ball_direction > 0:
-            ball_direction = -random.uniform(0.4, 2.0) # Losowanie współczynnika kierunkowego
-        else:
-            ball_direction = random.uniform(0.4, 2.0) # Losowanie współczynnika kierunkowego
-        #ball_direction *= -1
+        # Losowanie współczynnika kierunkowego
+        ball_direction = -random.uniform(0.4, 2.0) if ball_direction > 0 else random.uniform(0.4, 2.0)
+        # Obliczenie paramertu b funkcji liniowej.
         ball_b_factor = -ball_direction * ball.centerx + ball.bottom   
     # demo
     player.centerx = ball.centerx
     if player.left < 0: player.left = 0
     if player.right > playing_field_rect.right:
         player.right = playing_field_rect.right
+
     clock.tick(60) # Ograniczenie powtarzania pętli do 60 FPS
 
 pygame.quit()

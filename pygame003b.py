@@ -117,13 +117,14 @@ while run:
         #ball_direction *= -1
         ball_b_factor = -ball_direction * ball.centerx + ball.bottom
     '''
+    # Odbicie piłki od rakiety gracza,.
     if ball.bottom > player.top:
         ball.bottom = player.top
         # Losowanie współczynnika kierunkowego
         ball_direction = -random.uniform(0.4, 2.0) if ball_direction > 0 else random.uniform(0.4, 2.0)
         # Obliczenie paramertu b funkcji liniowej.
         ball_b_factor = -ball_direction * ball.centerx + ball.bottom   
-    # demo
+    # demo - podążanie rakiety gracza za piłką
     player.centerx = ball.centerx
     if player.left < 0: player.left = 0
     if player.right > playing_field_rect.right:

@@ -98,7 +98,6 @@ while run:
         ball_step *= -1
         ball_direction *= -1
         ball_b_factor = -ball_direction * ball.centerx + ball.bottom
-
     if ball.top < 0:
         ball.top = 0
         ball_direction *= -1

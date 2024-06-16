@@ -75,6 +75,9 @@ class myGame:
         if self.keys[pygame.K_ESCAPE]: # ESC - kończy działanie programu
             self.run = False
 
+        if self.keys[pygame.K_SPACE]:  # Spacja
+            pass
+        
         if self.keys[pygame.K_LEFT]:  # strzałka w lewo
             pass
 
@@ -148,7 +151,7 @@ class myGame:
             for self.event in pygame.event.get():
                 if self.event.type == pygame.QUIT: # Jeśli okno programu zostanie zamknięte przyciskiem x
                     self.run = False
-        
+       
             self.kbd()
             self.draw()
             self.calculate_ball()

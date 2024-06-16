@@ -50,7 +50,7 @@ class myGame:
         self.playing_field = pygame.Surface(self.playing_field_size)
         self.playing_field_rect = pygame.Surface.get_rect(self.playing_field)
 
-        # out
+        # out - pasek na dole pola gry
         self.out = pygame.Surface(self.out_size)
 
         # player
